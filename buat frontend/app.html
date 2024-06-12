@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        $.ajax({
+            url : 'http://127.0.0.1:8000/api/obat/v1/search',
+            method : 'GET',
+            data : {q : 'obat'},
+            success : function(res){
+                if(res.data){
+                    for(let i=0; i<res.data.length;i++){
+                    console.log(res.data[i].title)
+                 }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
